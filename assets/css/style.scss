@@ -6,5 +6,5 @@ $header-bg-color-secondary: #a8e063 !default;
 $header-heading-color: #414345 !default;
 
 @import '{{ site.theme }}';
-  
-@import "rouge-base16-dark";
+
+@import './rouge-base16-dark.scss';
