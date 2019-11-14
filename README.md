@@ -96,18 +96,18 @@ when we right js in node the global object is `Global` which also provies a lot 
 // normal function statement in js
 
 function sayHi() {
-	console.log('hi')
+	console.log('hi');
 }
 
-sayHi()
+sayHi();
 
 // function expression
 
 const sayHi =  function () {
-    console.log('hi)
+    console.log('hi);
 }
 
-sayHi()
+sayHi();
 ```
 
 ---
@@ -304,20 +304,20 @@ to read a file use
 
 ```js
 //  this is a sync methord !
-fs.readFileSync(<'path to file'>, <'Character encoding'>)
+fs.readFileSync(<'path to file'>, <'Character encoding'>);
 
 //  this is an async methord !
-fs.readFile(<'path to file'>, <'Character encoding'>, <'callBack to be fired once operation is complete'>)
+fs.readFile(<'path to file'>, <'Character encoding'>, <'callBack to be fired once operation is complete'>);
 ```
 
 write content to file
 
 ```js
 //  this is a sync methord !
-fs.writeFileSync(<'path to file'>, <'data to be written'>)
+fs.writeFileSync(<'path to file'>, <'data to be written'>);
 
 //  this is an async methord !
-fs.writeFile(<'path to file'>, <'data to be written'>, <'callBack to be fired once operation is complete'>)
+fs.writeFile(<'path to file'>, <'data to be written'>, <'callBack to be fired once operation is complete'>);
 ```
 
 reding and writing in files
