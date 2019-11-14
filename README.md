@@ -33,7 +33,7 @@ Node.js is written in **c++** so a the **V8 JavaScript engine** developed by goo
 
 > V8 Javascript engine is an open-source JavaScript engine developed by The Chromium Project for Google Chrome and Chromium web browsers. It can be stand alone or embedded in to any c++ applications
 
-![how nodejs works](how_nodejs_works.PNG 'Logo Title Text 1')
+![how nodejs works](how_nodejs_works.png 'Logo Title Text 1')
 
 Initially js was just ment to be used inside a browser environment
 <br>
