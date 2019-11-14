@@ -1,6 +1,10 @@
 ---
 ---
-$header-bg-color: #232526 !default;
-$header-bg-color-secondary: #414345 !default;
+
+$header-bg-color: #56ab2f !default;
+$header-bg-color-secondary: #a8e063 !default;
 
 @import '{{ site.theme }}';
+	color: #ffffff;
+	background-color: #232526;
+}
