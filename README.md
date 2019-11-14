@@ -103,9 +103,9 @@ sayHi();
 
 // function expression
 
-const sayHi =  function () {
-    console.log('hi);
-}
+const sayHi = function() {
+	console.log('hi');
+};
 
 sayHi();
 ```
