@@ -36,7 +36,8 @@ Node.js is written in **c++** so a the **V8 JavaScript engine** developed by goo
 ![how nodejs works](how_nodejs_works.png 'Logo Title Text 1')
 
 Initially js was just ment to be used inside a browser environment
-<br>
+
+
 Node.js written in c++ takes js code and uses v8 to convert js code in to machine readable code
 
 V8 is just one part of the c++ code.
