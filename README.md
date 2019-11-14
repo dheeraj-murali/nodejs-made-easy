@@ -43,8 +43,8 @@ V8 is just one part of the c++ code.
 <br>
 The rest of it hooks into the v8 engine to proivde other functionalites like lower level operations, like:
 
-- reading files
-- connecting to database
+-   reading files
+-   connecting to database
 
 ---
 
@@ -56,35 +56,35 @@ when we write js in a browser, the global object is the `window` object.
 <br>
 we can access properties and methords on that window object like :
 
-- alerts
-- scroll
-- setTimeout
-- console
-- etc...
+-   alerts
+-   scroll
+-   setTimeout
+-   console
+-   etc...
 
 when we right js in node the global object is `Global` which also provies a lot of [properties and methords](https://nodejs.org/dist/latest-v12.x/docs/api/globals.html) like :
 
-- ```javascript
-  console.log();
-  ```
-- ```javascript
-  setTimeout(() => {}, timeout);
-  ```
-- ```javascript
-  setInterval(() => {}, interval);
-  ```
-- ```javascript
-  __dirname; // fetched the currect directory
-  ```
-- ```javascript
-  __filename; // fetched the currect directory and file name
-  ```
-- ```javascript
-  require(); // import a file mor module
-  ```
-- ```javascript
-  export(); // export a file mor module
-  ```
+-   ```javascript
+    console.log();
+    ```
+-   ```javascript
+    setTimeout(() => {}, timeout);
+    ```
+-   ```javascript
+    setInterval(() => {}, interval);
+    ```
+-   ```javascript
+    __dirname; // fetched the currect directory
+    ```
+-   ```javascript
+    __filename; // fetched the currect directory and file name
+    ```
+-   ```javascript
+    require(); // import a file mor module
+    ```
+-   ```javascript
+    export(); // export a file mor module
+    ```
 
 ---
 
@@ -344,7 +344,3 @@ fs.writeFile('writteFile.txt', 'This data was written to file', function(err) {
 	console.log('It is saved!');
 });
 ```
-
----
-
-[So Far..](https://www.youtube.com/watch?v=NtrnaTKqFPQ)
