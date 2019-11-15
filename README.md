@@ -6,17 +6,18 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 
 > 🤔 If you just read that and have no idea what that meant, don't worry keep reading, you'll find out soon...
 
-Node.js is a platform which allows us to run Javascript on a computer or a server. (Js was just meant to be used inside a browser environment)
 
 ### Why should I use node.js you ask ?
 
 - node.js used Javascritp 🤩
-- It is very fast (beacause V8 is fast, it is one of the fasted JS engine out there and aslo it uses non-blocking I/O model we mentioned earlier)
-- Huge ecosystem (heard of npm ?)
+- It is very fast (beacause V8 is fast, it is one of the fastest JS engine out there and aslo node uses non-blocking I/O model we mentioned earlier)
+- Huge ecosystem (npm)
 
 ### Before we start
 
 This course assumes you have a basic knowledge in **Javascript**, HTML and a little bit of command line.
+
+You can also find working examples in the `Examples` folder of this repository. 
 
 ### Downloading and Installing
 
@@ -78,7 +79,7 @@ The rest of the c++ code hooks into the v8 engine to proivde other functionalite
 
 ## The Global Object
 
-when we write js in a browser, the global object is the `window` object.
+When we write js in a browser, the global object is the `window` object.
 <br>
 we can access properties and methords on that window object like :
 
@@ -114,7 +115,7 @@ when we right js in node the global object is `Global` which also provies a lot 
 
 ---
 
-#### Function expressions and Arrow functions [side note]
+#### Function expressions and Arrow functions `side note`
 
 ```js
 //Function expression pattern are widly used throughout nodejs
@@ -168,7 +169,7 @@ const array = [1, 2, 3, 4];
 console.log(count(array));
 ```
 
-when we create a module we need to explicity say which part of the module we need to export from the module file using `module.exports = <module name>`
+When we create a module we need to explicity say which part of the module we need to export from the module file using `module.exports = <module name>`
 <br>
 and once exported from the module file we can use `require('<path to module file>')` to import the exported module
 
@@ -207,7 +208,7 @@ console.log(moduleExports.pi);
 
 `module.exports` is just an empty object.
 we can add new properties to it like `module.exports.<propertyName>`,
-and so, we can have as many `module.exports` properties as possible inside a given module.
+and so, we can have as many `module.exports` properties as we want inside a given module.
 
 Here we are adding `counter`, `adder` and `pi` as different properties to `module.exports` object.
 
@@ -255,7 +256,7 @@ module.exports = {
 
 Although we can create custom modules, node.js ships with some built in modules (core module), which we can use in our applications
 
-when we are importing a core module we only need to provde the name of the module and not the path to it.
+> When we are importing a core module we only need to provde the name of the module and not the path to it.
 
 ```js
 //app.js
