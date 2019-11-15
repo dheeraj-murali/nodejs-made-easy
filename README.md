@@ -63,7 +63,7 @@ Js was just meant to be used inside a browser environment
 <br>
 Node.js takes the js code and uses v8 to convert js code in to machine readable code
 
-![how nodejs works](how_nodejs_works.PNG 'Logo Title Text 1')
+![how nodejs works](how_nodejs_works.png 'how node js works')
 
 V8 is just one part of the c++ code.
 <br>
@@ -415,7 +415,7 @@ fs.rmdir('<directory name>', function(err) {
 
 # Client and Server
 
-![how client and server works](client-server.PNG 'client server')
+![how client and server works](client-server.png 'client server')
 
 When we browse a website in a browser, we might need to get some data, at that point the broswer(client) will send a request to the server and the server will process the request and sends a response back, on reciving the response the browser(client) may update what we see, to show us the data.
 
