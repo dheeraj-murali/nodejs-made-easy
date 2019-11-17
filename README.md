@@ -6,18 +6,17 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 
 > 🤔 If you just read that and have no idea what that meant, don't worry keep reading, you'll find out soon...
 
-
 ### Why should I use node.js you ask ?
 
-- node.js used Javascritp 🤩
-- It is very fast (beacause V8 is fast, it is one of the fastest JS engine out there and aslo node uses non-blocking I/O model we mentioned earlier)
-- Huge ecosystem (npm)
+-   node.js used Javascritp 🤩
+-   It is very fast (beacause V8 is fast, it is one of the fastest JS engine out there and aslo node uses non-blocking I/O model we mentioned earlier)
+-   Huge ecosystem (npm)
 
 ### Before we start
 
 This course assumes you have a basic knowledge in **Javascript**, HTML and a little bit of command line.
 
-You can also find working examples in the `Examples` folder of this repository. 
+You can also find working examples in the `Examples` folder of this repository.
 
 ### Downloading and Installing
 
@@ -70,8 +69,8 @@ V8 is just one part of the c++ code.
 <br>
 The rest of the c++ code hooks into the v8 engine to proivde other functionalites and lower level operations, like:
 
-- reading files
-- connecting to database
+-   reading files
+-   connecting to database
 
 ---
 
@@ -83,35 +82,35 @@ When we write js in a browser, the global object is the `window` object.
 <br>
 we can access properties and methords on that window object like :
 
-- alerts
-- scroll
-- setTimeout
-- console
-- etc...
+-   alerts
+-   scroll
+-   setTimeout
+-   console
+-   etc...
 
 when we right js in node the global object is `Global` which also provies a lot of [properties and methords](https://nodejs.org/dist/latest-v12.x/docs/api/globals.html) like :
 
-- ```javascript
-  console.log();
-  ```
-- ```javascript
-  setTimeout(() => {}, timeout);
-  ```
-- ```javascript
-  setInterval(() => {}, interval);
-  ```
-- ```javascript
-  __dirname; // fetched the currect directory
-  ```
-- ```javascript
-  __filename; // fetched the currect directory and file name
-  ```
-- ```javascript
-  require(); // import a file mor module
-  ```
-- ```javascript
-  export(); // export a file mor module
-  ```
+-   ```javascript
+    console.log();
+    ```
+-   ```javascript
+    setTimeout(() => {}, timeout);
+    ```
+-   ```javascript
+    setInterval(() => {}, interval);
+    ```
+-   ```javascript
+    __dirname; // fetched the currect directory
+    ```
+-   ```javascript
+    __filename; // fetched the currect directory and file name
+    ```
+-   ```javascript
+    require(); // import a file mor module
+    ```
+-   ```javascript
+    export(); // export a file mor module
+    ```
 
 ---
 
@@ -414,6 +413,8 @@ fs.rmdir('<directory name>', function(err) {
 
 > You can not remove a directory without removing its contents first. use `fs.unlnik()` for first remove all the files before removing the directory.
 
+---
+
 # Client and Server
 
 ![how client and server works](client-server.png 'client server')
@@ -432,8 +433,8 @@ Information is send through this channel, this information is structured using a
 
 > these are used to structure data that needs to be send
 
-- HTTP (Hypertext Transfer Protocol)
-- FTP (File Transfer Protocol)
+-   HTTP (Hypertext Transfer Protocol)
+-   FTP (File Transfer Protocol)
 
 Once the data structure has been decided, the information is send to the the other computer via another protocol like `TCP` (Transfer Control Protocol)
 
@@ -458,8 +459,8 @@ When we send a request to the server, how can we tell that, that information is 
 
 When we make a request or get a response, along with the data we requested or the data we get back, there are some additional information that needs to be added, about the request/response like:
 
-- content type
-- Status
+-   content type
+-   Status
 
 # Creating a server
 
@@ -489,3 +490,70 @@ server.listern(portnumber, 'IP address');
 You can view the headers and contents we sen by visiting the network tab in your browser.
 
 ---
+
+## Streams and Buffers
+
+### Buffer
+
+A buffer is a temporary storage, for data that is being transfred from once place to another
+
+![How buffer works](buffer.png)
+
+To transfer a large data efficently we split it into smaller pieces of data and pass tem on to a buffer. The buffer stores the data temporarly and once its full, the data is passed on to the client.
+
+### Stream
+
+A stream is the channel through which the data is passed
+
+![How stream works](stream.png)
+
+Imagine streming a video online, we don't wait till the entire movie is downloaded, we get a small chunk of the video, so we can strat watching as soon a possible.<br>
+And some times we wait for the video to Buffer, that is the data to be loadded in to the buffer so that it can be send.
+
+### Creating streams in nodejs
+
+Nodejs can create 3 types of streams :
+
+-   Readable stream
+-   Writable stream
+-   Duplex stream (can be read and written)
+
+## Readable Stream
+
+A readable stream in node js can be used to read data from files.
+
+We can use `createReadStream()` methord of `fs` module to create a stream to read from file.<br> This stream will split data into small chunks and reads data from file. <br> so in order to know when a chunk of data is recieved, there is an event in `createReadStream()` called `data` which fires when the data chunk is recieved.
+
+```js
+// import fs module
+var fs = require('fs');
+
+// create a readable stream
+var readStream = fs.createReadStream('<filename>', '<Encoding>');
+
+// set up event listener
+readStream.on('data', function(chunk) {
+	console.log(`new chunk `, chunk);
+});
+```
+
+## Writable Stream
+
+A writable stream in node js can be used to write data to a files.
+
+We can use `createWriteStream()` methord of `fs` module to create a stream to write to a file.<br> This stream will split data into small chunks and writes data to a file. <br> so in order to know when a chunk of data is recieved, there is an event in `createReadStream()` called `data` which fires when the data chunk is recieved.
+
+```js
+// import fs module
+var fs = require('fs');
+
+// create a writable stream
+var writeStream = fs.createWriteStream('<filename>');
+
+// we can use write methord to write the data to the file
+writeStream.write('<data>');
+```
+
+---
+
+## Pipes
